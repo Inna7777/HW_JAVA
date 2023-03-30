@@ -18,10 +18,11 @@ public class Task2_2 {
             String[] replacements = new String[m];
             for (int i = 0; i < m; i++) {
                 System.out.printf("Заменяемые продукты" + (i + 1) + ": ");
-                String[] line = iScanner.nextLine().split(" - ");
-                product[i] = line[0];
-                replacements[i] = line[1];
+                String[] parts = iScanner.nextLine().split(" - ");
+                product[i] = parts[0];
+                replacements[i] = parts[1];
             }
+            
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
                     resepts[i] = resepts[i].replaceAll("\\b" + product[j] + "\\b", replacements[j]);
