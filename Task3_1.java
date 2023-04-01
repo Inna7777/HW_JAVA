@@ -14,9 +14,9 @@ public class Task3_1 {
         }
 
     }
-    private static void mergeSort(int [] arr){
+    private static void mergeSort(int [] arr){ // разбивка массива
         int n = arr.length;
-        if(n ==1) return;
+        if(n ==1) return; // условие выхода из цикла
 
         int mid = n / 2;
         int[] left = new int [mid];
@@ -28,11 +28,11 @@ public class Task3_1 {
         for(int i = mid; i < n; i++){
             ragth[i-mid]= arr[i];
         }
-        mergeSort(left);
-        mergeSort(ragth);
-        merge(arr, left, ragth);
+        mergeSort(left);// разбиваем левые части 
+        mergeSort(ragth); // разбиваем правые части
+        merge(arr, left, ragth); //вызываем метод слияния массива
     }
-    private static void merge(int [] arr, int [] left, int [] ragth){
+    private static void merge(int [] arr, int [] left, int [] ragth){ // функция слияния
         int left_new = left.length;
         int ragth_new = ragth.length;
         int i = 0;
